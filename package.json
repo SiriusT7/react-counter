@@ -5,7 +5,7 @@
   "scripts": {
     "clean" :"npx rimraf dist",
 
-    "deploygit" : "git add dist -f && git commit -m 'Adding dist' && git subtree push --prefix dist origin gh-pages",
+    "deploygit" : "git add dist -f && git commit -m \"Adding dist\" && git subtree push --prefix dist origin gh-pages",
     "cleanweb" : "git push origin --delete gh-pages",
 
     "deploy" : "npm run build && npm run deploygit && npm run clean",
