@@ -5,11 +5,11 @@
   "scripts": {
     "clean" :"npx rimraf dist",
 
-    "rebuild" : "npm run clean && npm run build",
-    "deploy" : "git add dist -f && git commit -m 'Adding dist' && git subtree push --prefix dist origin gh-pages",
-    "cleanWeb" : "git push origin --delete gh-pages",
+    "deploygit" : "git add dist -f && git commit -m 'Adding dist' && git subtree push --prefix dist origin gh-pages",
+    "cleanweb" : "git push origin --delete gh-pages",
 
-    "redeploy" : "",
+    "deploy" : "npm run build && npm run deploygit && npm run clean",
+    "redeploy" : "npm run cleanweb && npm run deploy",
 
     "dev": "vite",
     "build": "vite build",
